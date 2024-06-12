@@ -1,0 +1,37 @@
+:root {
+  --black: #000;
+  --blue: #1820ef;
+  --orange: #ff4e42;
+  --yellow: #ffc024;
+  --grey: #fafaed;
+  --button: #c5c5c5;
+  --white: #fff;
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-grey {
+  background-color: var(--grey);
+}
+
+.color-blue {
+  color: var(--blue);
+}
+
+.color-orange {
+  color: var(--orange);
+}
+
+.color-yellow {
+  color: var(--yellow);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+.color-black {
+  color: var(--black);
+}

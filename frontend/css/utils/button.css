@@ -1,0 +1,17 @@
+.button {
+  padding: var(--spacing-20) var(--spacing-16);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--spacing-4);
+  background-color: var(--button);
+  color: var(--white);
+  border-radius: 50px;
+  text-transform: uppercase;
+  font: var(--font-sm-extrabold);
+  min-width: 13.25rem;
+}
+.button.active {
+  background-color: var(--blue);
+  cursor: pointer;
+}

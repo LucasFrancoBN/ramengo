@@ -1,0 +1,228 @@
+:root {
+  /* Fonts size */
+  --font-xxxl-size: 10rem; /* 160px / 16 */
+  --font-xxxl-line-height: 6.25rem; /* 100px / 16 */
+
+  --font-xxl-size: 7.5rem; /* 120px / 16 */
+  --font-xxl-line-height: 6.25rem; /* 100px / 16 */
+
+  --font-xl-size: 3rem; /* 48px / 16 */
+  --font-xl-line-height: 3.5rem; /* 56px / 16 */
+
+  --font-lg-lg-size: 1.5rem; /* 24px / 16 */
+  --font-lg-lg-line-height: 2rem; /* 32px / 16 */
+
+  --font-lg-size: 2rem; /* 32px / 16 */
+  --font-lg-line-height: 2.5rem; /* 40px / 16 */
+
+  --font-md-size: 1.25rem; /* 20px / 16 */
+  --font-md-line-height: 1.5rem; /* 24px / 16 */
+
+  --font-base-lg-size: 1rem; /* 16px / 16 */
+  --font-base-lg-line-height: 1.5rem; /* 24px / 16 */
+
+  --font-base-size: 1rem; /* 16px / 16 */
+  --font-base-line-height: 1.25rem; /* 20px / 16 */
+
+  --font-sm-size: 0.875rem; /* 14px / 16 */
+  --font-sm-line-height: 1rem; /* 16px / 16 */
+
+  /* Fonts variables */
+  --font-xxxl-medium: 500 var(--font-xxxl-size) / var(--font-xxxl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xxxl-extrabold: 800 var(--font-xxxl-size) /
+      var(--font-xxxl-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xxxl-black: 900 var(--font-xxxl-size) / var(--font-xxxl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-xxl-medium: 500 var(--font-xxl-size) / var(--font-xxl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xxl-extrabold: 800 var(--font-xxl-size) / var(--font-xxl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xxl-black: 900 var(--font-xxl-size) / var(--font-xxl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-xl-medium: 500 var(--font-xl-size) / var(--font-xl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xl-extrabold: 800 var(--font-xl-size) / var(--font-xl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-xl-black: 900 var(--font-xl-size) / var(--font-xl-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-lg-lg-medium: 500 var(--font-lg-lg-size) /
+      var(--font-lg-lg-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-lg-lg-extrabold: 800 var(--font-lg-lg-size) /
+      var(--font-lg-lg-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-lg-lg-black: 900 var(--font-lg-lg-size) / var(--font-lg-lg-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-lg-medium: 500 var(--font-lg-size) / var(--font-lg-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-lg-extrabold: 800 var(--font-lg-size) / var(--font-lg-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-lg-black: 900 var(--font-lg-size) / var(--font-lg-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-md-medium: 500 var(--font-md-size) / var(--font-md-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-md-extrabold: 800 var(--font-md-size) / var(--font-md-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-md-black: 900 var(--font-md-size) / var(--font-md-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-base-lg-medium: 500 var(--font-base-lg-size) /
+      var(--font-base-lg-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-base-lg-extrabold: 800 var(--font-base-lg-size) /
+      var(--font-base-lg-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-base-lg-black: 900 var(--font-base-lg-size) /
+      var(--font-base-lg-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-base-medium: 500 var(--font-base-size) / var(--font-base-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-base-extrabold: 800 var(--font-base-size) /
+      var(--font-base-line-height) "M PLUS Rounded 1c",
+    sans-serif;
+  --font-base-black: 900 var(--font-base-size) / var(--font-base-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+
+  --font-sm-medium: 500 var(--font-sm-size) / var(--font-sm-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-sm-extrabold: 800 var(--font-sm-size) / var(--font-sm-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+  --font-sm-black: 900 var(--font-sm-size) / var(--font-sm-line-height)
+      "M PLUS Rounded 1c",
+    sans-serif;
+}
+
+.font-xxxl-medium {
+  font: var(--font-xxxl-medium);
+}
+
+.font-xxxl-extrabold {
+  font: var(--font-xxxl-extrabold);
+}
+
+.font-xxxl-black {
+  font: var(--font-xxxl-black);
+}
+
+.font-xxl-medium {
+  font: var(--font-xxl-medium);
+}
+
+.font-xxl-extrabold {
+  font: var(--font-xxl-extrabold);
+}
+
+.font-xxl-black {
+  font: var(--font-xxl-black);
+}
+
+.font-xl-medium {
+  font: var(--font-xl-medium);
+}
+
+.font-xl-extrabold {
+  font: var(--font-xl-extrabold);
+}
+
+.font-xl-black {
+  font: var(--font-xl-black);
+}
+
+.font-lg-lg-medium {
+  font: var(--font-lg-lg-medium);
+}
+
+.font-lg-lg-extrabold {
+  font: var(--font-lg-lg-extrabold);
+}
+
+.font-lg-lg-black {
+  font: var(--font-lg-lg-black);
+}
+
+.font-lg-medium {
+  font: var(--font-lg-medium);
+}
+
+.font-lg-extrabold {
+  font: var(--font-lg-extrabold);
+}
+
+.font-lg-black {
+  font: var(--font-lg-black);
+}
+
+.font-md-medium {
+  font: var(--font-md-medium);
+}
+
+.font-md-extrabold {
+  font: var(--font-md-extrabold);
+}
+
+.font-md-black {
+  font: var(--font-md-black);
+}
+
+.font-base-lg-medium {
+  font: var(--font-base-lg-medium);
+}
+
+.font-base-lg-extrabold {
+  font: var(--font-base-lg-extrabold);
+}
+
+.font-base-lg-black {
+  font: var(--font-base-lg-black);
+}
+
+.font-base-medium {
+  font: var(--font-base-medium);
+}
+
+.font-base-extrabold {
+  font: var(--font-base-extrabold);
+}
+
+.font-base-black {
+  font: var(--font-base-black);
+}
+
+.font-sm-medium {
+  font: var(--font-sm-medium);
+}
+
+.font-sm-extrabold {
+  font: var(--font-sm-extrabold);
+}
+
+.font-sm-black {
+  font: var(--font-sm-black);
+}
