@@ -1,6 +1,7 @@
 .header {
   background-image: url("../../../assets/patterns/pattern-vermelha.png");
   position: relative;
+  margin-bottom: var(--spacing-120);
 }
 
 .header-logo {
@@ -18,10 +19,18 @@
 .header-desc-text {
   position: absolute;
   bottom: 109px;
-  left: -180px;
+  left: -140px;
+}
+
+.header-desc-text h1 {
+  position: relative;
+  margin-left: 48px;
 }
 
 .header-desc-text-japanese {
+  position: absolute;
+  left: -48px;
+  top: -55%;
   display: block;
   writing-mode: vertical-rl;
   margin-right: var(--spacing-40-minus);
@@ -32,6 +41,10 @@
 }
 
 @media screen and (max-width: 1100px) {
+  .header {
+    margin-bottom: var(--spacing-40);
+  }
+
   .header-logo {
     position: static;
     padding: var(--spacing-20) 0 var(--spacing-24);
@@ -60,10 +73,12 @@
   }
 
   .header-desc-text h1 {
-    font: var(--font-xxl-black);
+    margin-left: 0;
+    font: var(--font-xxxl-black);
   }
 
   .header-desc-text-japanese {
+    position: static;
     writing-mode: horizontal-tb;
     display: block;
     margin-right: 0;
