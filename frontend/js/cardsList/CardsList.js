@@ -2,12 +2,30 @@ export default class CardList {
   wrapperList;
   items;
   dots;
+  position;
 
   constructor(wrapperList, items, dots) {
     this.wrapperList = wrapperList;
-    this.items = items;
-    this.dots = dots;
-    console.log(wrapperList, items, dots);
+    this.items = [...items];
+    this.dots = [...dots];
+  }
+
+  transition(active) {
+    this.wrapperList.style.transition = active ? "transform .3s" : "";
+  }
+
+  calcOfMove(dotIndex) {
+    const item = this.items[dotIndex];
+    const itemRect = item.getBoundingClientRect();
+    const wrapperRect = this.wrapperList.getBoundingClientRect();
+
+    const itemOffsetLeft = itemRect.left - wrapperRect.left;
+    const wrapperCenter = wrapperRect.width / 2;
+    const itemCenter = itemOffsetLeft + itemRect.width / 2;
+
+    const moveDistance = wrapperCenter - itemCenter;
+
+    return moveDistance;
   }
 
   changeItemFocus(dotIndex) {
@@ -15,7 +33,10 @@ export default class CardList {
       dot.classList.remove("active");
     });
     this.dots[dotIndex].classList.add("active");
-    this.wrapperList.style.transform = `translateX(-${dotIndex * 360}px)`;
+
+    this.wrapperList.style.transform = `translateX(${this.calcOfMove(
+      dotIndex
+    )}px)`;
   }
 
   addEvents() {
@@ -27,5 +48,6 @@ export default class CardList {
   init() {
     if (!this.items.length || !this.dots.length || !this.wrapperList) return;
     this.addEvents();
+    this.transition(true);
   }
 }

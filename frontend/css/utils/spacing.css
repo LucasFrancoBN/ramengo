@@ -478,3 +478,35 @@
 .pl-96 {
   padding-left: var(--spacing-96);
 }
+
+.m-120 {
+  margin: var(--spacing-120);
+}
+.mt-120 {
+  margin-top: var(--spacing-120);
+}
+.mr-120 {
+  margin-right: var(--spacing-120);
+}
+.mb-120 {
+  margin-bottom: var(--spacing-120);
+}
+.ml-120 {
+  margin-left: var(--spacing-120);
+}
+
+.p-120 {
+  padding: var(--spacing-120);
+}
+.pt-120 {
+  padding-top: var(--spacing-120);
+}
+.pr-120 {
+  padding-right: var(--spacing-120);
+}
+.pb-120 {
+  padding-bottom: var(--spacing-120);
+}
+.pl-120 {
+  padding-left: var(--spacing-120);
+}

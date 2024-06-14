@@ -24,8 +24,20 @@
 }
 
 @media screen and (max-width: 600px) {
+  .cards:first-child {
+    margin-bottom: var(--spacing-64);
+  }
+
+  .cards:last-child {
+    margin-bottom: var(--spacing-48);
+  }
+
+  .cards > h1 {
+    font: var(--font-lg-black);
+  }
+
   .cards-list {
-    grid-template-columns: 360px 360px 360px;
+    grid-template-columns: repeat(3, 75vw);
     gap: var(--spacing-16);
     margin-bottom: var(--spacing-24);
   }
