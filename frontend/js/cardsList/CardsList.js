@@ -3,6 +3,7 @@ export default class CardList {
   items;
   dots;
   position;
+  activeClass = "active";
 
   constructor(wrapperList, items, dots) {
     this.wrapperList = wrapperList;
@@ -30,9 +31,9 @@ export default class CardList {
 
   changeItemFocus(dotIndex) {
     this.dots.forEach((dot) => {
-      dot.classList.remove("active");
+      dot.classList.remove(this.activeClass);
     });
-    this.dots[dotIndex].classList.add("active");
+    this.dots[dotIndex].classList.add(this.activeClass);
 
     this.wrapperList.style.transform = `translateX(${this.calcOfMove(
       dotIndex

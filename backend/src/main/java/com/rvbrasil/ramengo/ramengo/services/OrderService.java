@@ -60,7 +60,7 @@ public class OrderService {
     OrderResponse orderResponse = new OrderResponse(
         responseBody.orderId(),
         broth.getName() + " and " + protein.getName() + " Ramen",
-        "https://tech.redventures.com.br/icons/ramen/ramen" + protein.getName() + ".png");
+        "./assets/ramens/" + protein.getName() + ".png");
     return repository.save(orderResponse);
   }
 }

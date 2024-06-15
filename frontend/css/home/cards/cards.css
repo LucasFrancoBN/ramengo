@@ -10,8 +10,21 @@
 }
 
 .cards-card {
+  transition: all 0.1s;
   cursor: pointer;
   border-radius: 1rem;
+}
+
+.cards-card.active {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.cards-card.active h2 {
+  color: var(--white);
+}
+
+.cards-card.active .price {
+  color: var(--yellow);
 }
 
 .cards-card img {

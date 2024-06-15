@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.placeorder-wrapper button {
+  transition: all 0.1s;
+}
+
 @media screen and (max-width: 600px) {
   .placeorder-wrapper {
     margin-bottom: var(--spacing-48);
