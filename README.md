@@ -120,7 +120,7 @@ frontend/
 <h2 id="exec">⚙️ Como executar o projeto ⚙️</h2>
 
 ### Pré-requisitos
-Antes de tentar rodar o projeto, é necessário que vc tenha em sua máquina: Java 21, Maven e NodeJs
+Antes de tentar rodar o projeto, é necessário que vc tenha em sua máquina: Java 21, Maven, Intellij e NodeJs
 
 ### Backend
 
