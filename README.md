@@ -126,7 +126,7 @@ Antes de tentar rodar o projeto, é necessário que vc tenha em sua máquina: Ja
 
 1. Clone o repositório:
 ```shell
-git clone https://github.com/seu-usuario/ramenGO.git
+git clone https://github.com/LucasFrancoBN/ramengo.git
 ```
 2. Navegue até o diretório do backend:
 ```shell
