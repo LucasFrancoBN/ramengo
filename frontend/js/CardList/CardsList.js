@@ -72,7 +72,7 @@ export default class CardList {
     const { json, response } = await this.customFetch.request(
       `http://localhost:8080/ramengo/${type}s`,
       {
-        headers: { "x-api-key": "" },
+        headers: { "x-api-key": "Gp3Ai6XZ9Q1wYO5stN8r703Dp2BkZYmR4ojLhTdG" },
       }
     );
     console.log(json, response);

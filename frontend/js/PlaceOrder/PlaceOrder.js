@@ -56,7 +56,10 @@ export default class PlaceOrder {
       "http://localhost:8080/ramengo/orders",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-api-key": "" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": "Gp3Ai6XZ9Q1wYO5stN8r703Dp2BkZYmR4ojLhTdG",
+        },
         body: JSON.stringify({ brothId: this.broth, proteinId: this.protein }),
       }
     );

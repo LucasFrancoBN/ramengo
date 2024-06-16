@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class ApiKeyFilter extends OncePerRequestFilter {
   private static final String API_KEY_HEADER = "x-api-key";
-  private static final String API_KEY_VALUE = "";
+  private static final String API_KEY_VALUE = "Gp3Ai6XZ9Q1wYO5stN8r703Dp2BkZYmR4ojLhTdG";
 
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
