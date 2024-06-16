@@ -8,13 +8,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class BrothService {
   @Autowired
   private BrothRepository repository;
 
   @Transactional(readOnly = true)
-  public Page<BrothDTO> findAll(Pageable pageable) {
-    return repository.searchPageable(pageable);
+  public List<BrothDTO> findAll() {
+    return repository.searchAll();
   }
 }

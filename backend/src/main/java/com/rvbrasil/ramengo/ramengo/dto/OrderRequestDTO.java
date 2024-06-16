@@ -2,7 +2,7 @@ package com.rvbrasil.ramengo.ramengo.dto;
 
 import java.util.UUID;
 
-public record OrderRequest(
+public record OrderRequestDTO(
     UUID brothId,
     UUID proteinId
 ) {

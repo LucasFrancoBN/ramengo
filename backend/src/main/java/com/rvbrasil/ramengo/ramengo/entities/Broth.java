@@ -14,12 +14,8 @@ public class Broth {
   private String name;
   private String description;
   private double price;
-  @ManyToMany
-  @JoinTable(name = "tb_order_request",
-             joinColumns = @JoinColumn(name = "brothId"),
-             inverseJoinColumns = @JoinColumn(name = "proteinId")
-  )
-  Set<Protein> proteins = new HashSet<>();
+  @OneToMany(mappedBy = "id.brothId")
+  private final Set<OrderRequest> orderRequests = new HashSet<>();
 
   public Broth() {}
 
@@ -87,8 +83,8 @@ public class Broth {
     this.price = price;
   }
 
-  public Set<Protein> getProteins() {
-    return proteins;
+  public Set<OrderRequest> getOrderRequests() {
+    return orderRequests;
   }
 
   @Override

@@ -3,20 +3,20 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="./assets/miso/inactive.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
-  <title>Vite App</title>
+  <title>ramenGO!</title>
 </head>
 
 <body>
   <header class="header">
     <figure class="header-logo">
       <a href="#">
-        <img src="./assets/logo/ramen-go/amarelo.svg" alt="ramenGo!">
+        <img src="./assets/logo/ramen-go/yellow.svg" alt="ramenGo!">
       </a>
     </figure>
     <div class="header-desc pb-40 pt-40">
@@ -35,76 +35,47 @@
       <h1 class="font-xl-black mb-4">First things first: select your favorite broth.</h1>
       <p class="font-base-medium mb-48">It will give the whole flavor on your ramen soup. </p>
       <ul class="broths cards-list">
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/salt/inactive.svg" alt="Salt">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Salt</h2>
-          <p class="font-sm-medium mb-36">Simple like the seawater, nothing more </p>
-          <p class="price font-md-black color-orange">US$10</p>
-        </li>
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/shoyu/inactive.svg" alt="Shoyu">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Shoyu</h2>
-          <p class="font-sm-medium mb-36">The good old and traditional soy sauce </p>
-          <p class="price font-md-black color-orange">US$10</p>
-        </li>
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/miso/inactive.svg" alt="Miso">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Miso</h2>
-          <p class="font-sm-medium mb-36">Paste made of fermented soybeans </p>
-          <p class="price font-md-black color-orange">US$12</p>
-        </li>
       </ul>
       <div class="cards-dots">
-        <span class="cards-dot active"></span>
-        <span class="cards-dot"></span>
-        <span class="cards-dot"></span>
       </div>
     </article>
     <article class="cards mb-80">
       <h1 class="font-xl-black mb-4">It’s time to choose (or not) your meat!</h1>
       <p class="font-base-medium mb-48">Some people love, some don’t. We have options for all tastes. </p>
-      <ul class="meat cards-list">
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/chasu/inactive.svg" alt="Chasu">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Chasu</h2>
-          <p class="font-sm-medium mb-36">A sliced flavourful pork meat with a selection of season vegetables.</p>
-          <p class="price font-md-black color-orange">US$10</p>
-        </li>
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/yasai/inactive.svg" alt="Yasai">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Yasai Vegetarian</h2>
-          <p class="font-sm-medium mb-36">A delicious vegetarian lamen with a selection of season vegetables. </p>
-          <p class="price font-md-black color-orange">US$10</p>
-        </li>
-        <li class="cards-card shadow p-40">
-          <figure class="mb-14">
-            <img src="./assets/karaague/inactive.svg" alt="Karaague">
-          </figure>
-          <h2 class="font-md-black color-blue mb-10">Karaague</h2>
-          <p class="font-sm-medium mb-36">Three units of fried chicken, moyashi, ajitama egg and other vegetables. </p>
-          <p class="price font-md-black color-orange">US$12</p>
-        </li>
+      <ul class="protein cards-list">
       </ul>
       <div class="cards-dots">
-        <span class="cards-dot active"></span>
-        <span class="cards-dot"></span>
-        <span class="cards-dot"></span>
       </div>
     </article>
     <section class="placeorder-wrapper mb-120">
       <button class="button">Place My Order <figure><img src="./assets/arrow/inactive.svg" alt=""></span></button>
     </section>
   </main>
+  <section aria-hidden="true" class="success">
+    <div class="success-bg">
+      <figure class="success-logo">
+        <img src="./assets/logo/ramen-go/orange.svg" alt="">
+      </figure>
+      <div class="success-ramen">
+        <figure>
+          <img src="" alt="Your order image">
+        </figure>
+        <p class="font-md-black color-white">Your order: </p>
+        <h1 class="font-xl-black color-yellow"></h1>
+      </div>
+    </div>
+    <div class="success-bg">
+      <div class="success-placeorder">
+        <figure class="mb-20">
+          <img src="./assets/bowing.svg" alt="Thank you!">
+        </figure>
+        <p class="font-md-black color-yellow mb-16">どもありがとうございます。</p>
+        <h2 class="font-xl-black color-orange mb-4">Your order is being prepared</h2>
+        <p class="success-placeorder-wait font-base-medium mb-32">Hold on, when you least expect you will be eating your rámen.</p>
+        <button class="neworder button active">Place new order <figure><img src="./assets/arrow/active.svg" alt=""></figure></button>
+      </div>
+    </div>
+  </section>
   <script type="module" src="./js/main.js"></script>
 </body>
 

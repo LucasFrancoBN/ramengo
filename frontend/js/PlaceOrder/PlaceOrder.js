@@ -1,29 +1,75 @@
-import { textFormatter } from "../utils/formater";
+import { textFormatter } from "../utils/formatter";
 import { map } from "../utils/map";
 import { request } from "../utils/request";
 
 export default class PlaceOrder {
   brothList;
-  meatList;
+  proteinList;
   buttonPlaceOrder;
+  buttonNewOrder;
+  successWrapper;
+  imageSuccess;
+  descriptionSuccess;
   broth;
-  meat;
+  protein;
   activeClass = "active";
-  map;
+  map = {};
   textFormatter;
   request;
 
-  constructor(brothList, meatList, buttonPlaceOrder) {
+  constructor(
+    brothList,
+    proteinList,
+    buttonPlaceOrder,
+    buttonNewOrder,
+    successWrapper,
+    imageSuccess,
+    descriptionSuccess
+  ) {
     this.brothList = [...brothList];
-    this.meatList = [...meatList];
+    this.proteinList = [...proteinList];
     this.buttonPlaceOrder = buttonPlaceOrder;
+    this.buttonNewOrder = buttonNewOrder;
+    this.successWrapper = successWrapper;
+    this.imageSuccess = imageSuccess;
+    this.descriptionSuccess = descriptionSuccess;
     this.map = map;
     this.textFormatter = textFormatter;
     this.request = request;
+
+    this.handleClickPlaceOrder = this.handleClickPlaceOrder.bind(this);
+    this.handleClickNewOrder = this.handleClickNewOrder.bind(this);
   }
 
   validation() {
-    return this.broth && this.meat;
+    return this.broth && this.protein;
+  }
+
+  changeSuccessStatus(description, image) {
+    this.successWrapper.classList.add(this.activeClass);
+    this.successWrapper.ariaHidden = "false";
+    this.imageSuccess.src = image;
+    this.descriptionSuccess.innerText = description;
+  }
+
+  async placingOrder() {
+    const { json, response } = await this.request(
+      "http://localhost:8080/ramengo/orders",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-api-key": "" },
+        body: JSON.stringify({ brothId: this.broth, proteinId: this.protein }),
+      }
+    );
+    console.log(
+      JSON.stringify({ brothId: this.broth, proteinId: this.protein })
+    );
+    console.log(json, response);
+    if (response?.status !== 201 || !json) {
+      alert("We were unable to process your order. Please try again.");
+      return;
+    }
+    this.changeSuccessStatus(json.description, json.image);
   }
 
   changeButtonStatus() {
@@ -58,6 +104,11 @@ export default class PlaceOrder {
     this[type] = map[formattedText];
   }
 
+  handleClickNewOrder() {
+    this.successWrapper.ariaHidden = "true";
+    this.successWrapper.classList.remove("active");
+  }
+
   handleClick(type, list, clickedItem) {
     list.forEach((item) => {
       item.classList.remove(this.activeClass);
@@ -70,12 +121,10 @@ export default class PlaceOrder {
 
   handleClickPlaceOrder() {
     if (!this.validation()) {
-      alert("Do you need select a broth and a meat.");
+      alert("Do you need select a broth and a protein.");
       return;
     }
-    this.request("http://localhost:8080/ramengo/broths", {
-      headers: { "x-api-key": "" },
-    });
+    this.placingOrder();
   }
 
   addEvent() {
@@ -84,14 +133,13 @@ export default class PlaceOrder {
         this.handleClick("broth", a, brothItem)
       )
     );
-    this.meatList.forEach((meatItem, _, a) =>
-      meatItem.addEventListener("click", () =>
-        this.handleClick("meat", a, meatItem)
+    this.proteinList.forEach((proteinItem, _, a) =>
+      proteinItem.addEventListener("click", () =>
+        this.handleClick("protein", a, proteinItem)
       )
     );
-    this.buttonPlaceOrder.addEventListener("click", () =>
-      this.handleClickPlaceOrder()
-    );
+    this.buttonPlaceOrder.addEventListener("click", this.handleClickPlaceOrder);
+    this.buttonNewOrder.addEventListener("click", this.handleClickNewOrder);
   }
 
   init() {

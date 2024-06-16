@@ -8,13 +8,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ProteinService {
   @Autowired
   private ProteinRepository repository;
 
   @Transactional(readOnly = true)
-  public Page<ProteinDTO> findAll(Pageable pageable) {
-    return repository.searchPageable(pageable);
+  public List<ProteinDTO> findAll(Pageable pageable) {
+    return repository.searchAll();
   }
 }

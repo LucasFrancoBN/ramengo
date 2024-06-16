@@ -17,8 +17,8 @@ public class Protein {
   private String name;
   private String description;
   private double price;
-  @ManyToMany(mappedBy = "proteins")
-  private final Set<Broth> broths = new HashSet<>();
+  @OneToMany(mappedBy = "id.proteinId")
+  private final Set<OrderRequest> orderRequests = new HashSet<>();
 
   public Protein() {}
 
@@ -86,8 +86,8 @@ public class Protein {
     this.price = price;
   }
 
-  public Set<Broth> getBroths() {
-    return broths;
+  public Set<OrderRequest> getOrderRequests() {
+    return orderRequests;
   }
 
   @Override
