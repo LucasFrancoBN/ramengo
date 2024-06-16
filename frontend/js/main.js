@@ -1,4 +1,3 @@
-import CardList from "./CardsList/CardsList";
 import PlaceOrder from "./PlaceOrder/PlaceOrder";
 
 const brothWrapperList = document.querySelector(".broths.cards-list");
