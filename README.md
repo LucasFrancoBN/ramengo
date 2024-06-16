@@ -6,6 +6,7 @@
   <a href="#front">Frontend</a> - 
   <a href="#exec">Como executar o projeto</a>
 </div>
+<br />
 
 RamenGO é uma aplicação fullstack desenvolvida utilizando as tecnologias:
 
@@ -117,7 +118,9 @@ frontend/
 
 
 <h2 id="exec">⚙️ Como executar o projeto ⚙️</h2>
+
 ### Backend
+
 1. Clone o repositório:
 ```shell
 git clone https://github.com/seu-usuario/ramenGO.git
