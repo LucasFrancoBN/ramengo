@@ -56,12 +56,20 @@
   .success-logo {
     position: static;
   }
+
+  .success-ramen img {
+    max-height: 400px;
+  }
 }
 
 @media screen and (max-width: 530px) {
   .success-ramen,
   .success-placeorder {
     text-align: center;
+  }
+
+  .success-ramen img {
+    max-height: 260px;
   }
 
   .success-ramen p {

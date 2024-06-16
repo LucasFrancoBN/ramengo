@@ -1,5 +1,6 @@
 package com.rvbrasil.ramengo.ramengo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.*;
@@ -14,7 +15,8 @@ public class Broth {
   private String name;
   private String description;
   private double price;
-  @OneToMany(mappedBy = "id.brothId")
+  @JsonIgnore
+  @OneToMany(mappedBy = "broth")
   private final Set<OrderRequest> orderRequests = new HashSet<>();
 
   public Broth() {}

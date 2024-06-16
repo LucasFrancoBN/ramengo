@@ -7,6 +7,7 @@
   --button: #c5c5c5;
   --dot: #e0dbbf;
   --white: #fff;
+  --translucent: rgba(80, 80, 80, 0.5);
 }
 
 .bg-blue {
@@ -15,6 +16,14 @@
 
 .bg-grey {
   background-color: var(--grey);
+}
+
+.bg-dot {
+  background-color: var(--dot);
+}
+
+.bg-button {
+  background-color: var(--button);
 }
 
 .color-blue {

@@ -1,4 +1,6 @@
-import { request } from "../utils/request";
+import CustomFetch from "../utils/CustomFetch";
+import debounce from "../utils/debounce";
+import { loadindStructure } from "../utils/loadingStructure";
 
 export default class CardList {
   wrapperList;
@@ -8,13 +10,14 @@ export default class CardList {
   type;
   position;
   activeClass = "active";
-  request;
+  customFetch;
 
-  constructor(wrapperList, wrapperDots, type) {
+  constructor(wrapperList, wrapperDots, type, wrapperLoading) {
     this.wrapperList = wrapperList;
     this.wrapperDots = wrapperDots;
     this.type = type;
-    this.request = request;
+    this.customFetch = new CustomFetch(wrapperLoading, loadindStructure.card);
+    this.handleResize = debounce(this.handleResize.bind(this), 200);
   }
 
   setDots(dots) {
@@ -23,6 +26,14 @@ export default class CardList {
 
   setItem(items) {
     this.items = items;
+  }
+
+  initialPosition() {
+    this.wrapperList.style.transform = `translateX(0)`;
+    this.dots.forEach((dot) => {
+      dot.classList.remove(this.activeClass);
+    });
+    this.dots[0].classList.add(this.activeClass);
   }
 
   fillDots(lengthItems) {
@@ -53,16 +64,18 @@ export default class CardList {
       )
       .join("")}`;
     const items = this.wrapperList.querySelectorAll(".cards-card");
+    this.wrapperList.ariaHidden = "false";
     this.setItem(items);
   }
 
   async fetchData(type) {
-    const { json, response } = await request(
+    const { json, response } = await this.customFetch.request(
       `http://localhost:8080/ramengo/${type}s`,
       {
         headers: { "x-api-key": "" },
       }
     );
+    console.log(json, response);
     if (response.status !== 200 || json === null) {
       alert("Unable to load data. Please reload the page.");
       return;
@@ -100,6 +113,12 @@ export default class CardList {
     )}px)`;
   }
 
+  handleResize() {
+    setTimeout(() => {
+      this.initialPosition();
+    }, 150);
+  }
+
   addEvents() {
     this.dots.forEach((dot, index) => {
       dot.addEventListener("click", () => this.changeItemFocus(index));
@@ -110,6 +129,7 @@ export default class CardList {
     if (!this.wrapperList || !this.wrapperDots || !this.type) return;
     await this.fetchData(this.type);
     this.addEvents();
+    window.addEventListener("resize", this.handleResize);
     this.transition(true);
   }
 }

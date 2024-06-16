@@ -1,5 +1,6 @@
 package com.rvbrasil.ramengo.ramengo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
@@ -17,7 +18,8 @@ public class Protein {
   private String name;
   private String description;
   private double price;
-  @OneToMany(mappedBy = "id.proteinId")
+  @JsonIgnore
+  @OneToMany(mappedBy = "protein")
   private final Set<OrderRequest> orderRequests = new HashSet<>();
 
   public Protein() {}

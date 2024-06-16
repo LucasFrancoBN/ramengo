@@ -34,7 +34,9 @@
     <article class="cards mb-96">
       <h1 class="font-xl-black mb-4">First things first: select your favorite broth.</h1>
       <p class="font-base-medium mb-48">It will give the whole flavor on your ramen soup. </p>
-      <ul class="broths cards-list">
+      <ul aria-hidden="true" class="broths cards-list">
+      </ul>
+      <ul class="loading-cards">
       </ul>
       <div class="cards-dots">
       </div>
@@ -42,8 +44,9 @@
     <article class="cards mb-80">
       <h1 class="font-xl-black mb-4">It’s time to choose (or not) your meat!</h1>
       <p class="font-base-medium mb-48">Some people love, some don’t. We have options for all tastes. </p>
-      <ul class="protein cards-list">
+      <ul aria-hidden="true" class="protein cards-list">
       </ul>
+      <ul class="loading-cards"></ul>
       <div class="cards-dots">
       </div>
     </article>
@@ -76,6 +79,8 @@
       </div>
     </div>
   </section>
+  <div aria-hidden="true" class="loading-order">
+  </div>
   <script type="module" src="./js/main.js"></script>
 </body>
 

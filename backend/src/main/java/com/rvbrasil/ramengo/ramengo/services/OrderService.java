@@ -55,7 +55,7 @@ public class OrderService {
     ResponseEntity<OrderId> response = restTemplate.postForEntity(url, requestEntity, OrderId.class);
 
     if(!response.getStatusCode().is2xxSuccessful()) {
-      requestRepository.save(new OrderRequest(broth.getId(), protein.getId(), StatusOrderRequest.INCOMPLETE));
+      requestRepository.save(new OrderRequest(broth, protein, StatusOrderRequest.INCOMPLETE));
       throw new ErrorException("could not place order");
     }
     OrderId responseBody = response.getBody();
@@ -64,7 +64,7 @@ public class OrderService {
         responseBody.orderId(),
         broth.getName() + " and " + protein.getName() + " Ramen",
         "./assets/ramens/" + protein.getName() + ".png");
-    requestRepository.save(new OrderRequest(broth.getId(), protein.getId(), StatusOrderRequest.COMPLETE));
+    requestRepository.save(new OrderRequest(broth, protein, StatusOrderRequest.COMPLETE));
     return repository.save(orderResponse);
   }
 }

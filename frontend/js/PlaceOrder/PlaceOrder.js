@@ -1,6 +1,6 @@
 import { textFormatter } from "../utils/formatter";
-import { map } from "../utils/map";
-import { request } from "../utils/request";
+import CustomFetch from "../utils/CustomFetch";
+import { loadindStructure } from "../utils/loadingStructure";
 
 export default class PlaceOrder {
   brothList;
@@ -13,9 +13,8 @@ export default class PlaceOrder {
   broth;
   protein;
   activeClass = "active";
-  map = {};
   textFormatter;
-  request;
+  customFetch;
 
   constructor(
     brothList,
@@ -24,7 +23,8 @@ export default class PlaceOrder {
     buttonNewOrder,
     successWrapper,
     imageSuccess,
-    descriptionSuccess
+    descriptionSuccess,
+    wrapperLoading
   ) {
     this.brothList = [...brothList];
     this.proteinList = [...proteinList];
@@ -33,9 +33,8 @@ export default class PlaceOrder {
     this.successWrapper = successWrapper;
     this.imageSuccess = imageSuccess;
     this.descriptionSuccess = descriptionSuccess;
-    this.map = map;
     this.textFormatter = textFormatter;
-    this.request = request;
+    this.customFetch = new CustomFetch(wrapperLoading, loadindStructure.order);
 
     this.handleClickPlaceOrder = this.handleClickPlaceOrder.bind(this);
     this.handleClickNewOrder = this.handleClickNewOrder.bind(this);
@@ -53,7 +52,7 @@ export default class PlaceOrder {
   }
 
   async placingOrder() {
-    const { json, response } = await this.request(
+    const { json, response } = await this.customFetch.request(
       "http://localhost:8080/ramengo/orders",
       {
         method: "POST",
@@ -84,24 +83,18 @@ export default class PlaceOrder {
   }
 
   changeImage(list, clickedItem) {
-    const titleClickedItem = clickedItem.querySelector("h2");
     const imgClickedItem = clickedItem.querySelector("img");
 
     list.forEach((item) => {
-      const title = item.querySelector("h2");
       const img = item.querySelector("img");
-      img.src = `./assets/${this.textFormatter(title.innerText)}/inactive.svg`;
+      img.src = img.dataset.inactive;
     });
 
-    imgClickedItem.src = `./assets/${this.textFormatter(
-      titleClickedItem.innerText
-    )}/active.svg`;
+    imgClickedItem.src = imgClickedItem.dataset.active;
   }
 
   selectItem(type, clickedItem) {
-    const searchedTitle = clickedItem.querySelector("h2");
-    const formattedText = this.textFormatter(searchedTitle.innerText);
-    this[type] = map[formattedText];
+    this[type] = clickedItem.dataset.key;
   }
 
   handleClickNewOrder() {

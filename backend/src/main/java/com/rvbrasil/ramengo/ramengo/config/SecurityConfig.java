@@ -1,7 +1,6 @@
 package com.rvbrasil.ramengo.ramengo.config;
 
 import com.rvbrasil.ramengo.ramengo.filter.ApiKeyFilter;
-import org.apache.catalina.filters.CorsFilter;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
