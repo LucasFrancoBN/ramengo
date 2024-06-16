@@ -128,14 +128,13 @@ Antes de tentar rodar o projeto, é necessário que vc tenha em sua máquina: Ja
 ```shell
 git clone https://github.com/seu-usuario/ramenGO.git
 ```
-2. Clone o repositório:
+2. Navegue até o diretório do backend:
 ```shell
 cd ramenGO/backend
 ```
-3. Execute o projeto:
-```shell
-mvn spring-boot:run
-```
+3. Abra o intellij no diretório.
+4. Configure o projeto como um projeto Maven.
+5. No intellij, vá em src > main > com.rvbrasil.ramengo.ramengo > RamengoApplication e rode o projeto
 
 ### Frontend
 1. Navegue até o diretório do frontend:
