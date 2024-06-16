@@ -134,7 +134,7 @@ cd ramenGO/backend
 ```
 3. Abra o intellij no diretório.
 4. Configure o projeto como um projeto Maven.
-5. No intellij, vá em src > main > com.rvbrasil.ramengo.ramengo > RamengoApplication e rode o projeto
+5. No intellij, vá em ``src > main > com.rvbrasil.ramengo.ramengo > RamengoApplication`` e rode o projeto
 
 ### Frontend
 1. Navegue até o diretório do frontend:
